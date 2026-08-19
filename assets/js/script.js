@@ -173,10 +173,12 @@ if (galleryItems.length) {
 
 const loader = document.getElementById("loader");
 const skipLoader = document.getElementById("skipLoader");
+const loveFill = document.getElementById("loveFill");
+const lovePercent = document.getElementById("lovePercent");
 const hasSeenLoader = sessionStorage.getItem("kadhalumLoaderSeen");
 
 if (loader) {
-  const showInvitation = () => {
+  const showLoader = () => {
     loader.classList.add("is-open");
   };
 
@@ -186,24 +188,44 @@ if (loader) {
     document.body.classList.add("is-loaded");
   };
 
+  const animateLoveLoader = () => {
+    let current = 0;
+    const step = () => {
+      current += 2.5;
+      if (loveFill) loveFill.style.width = `${Math.min(current, 100)}%`;
+      if (lovePercent) lovePercent.textContent = `${Math.min(Math.round(current), 100)}%`;
+
+      if (current < 100) {
+        requestAnimationFrame(step);
+      } else {
+        setTimeout(() => {
+          sessionStorage.setItem("kadhalumLoaderSeen", "true");
+          hideLoader();
+        }, 500);
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
   if (!hasSeenLoader && !prefersReducedMotion) {
-    setTimeout(showInvitation, 260);
-    const loaderTimeout = window.setTimeout(() => {
-      sessionStorage.setItem("kadhalumLoaderSeen", "true");
-      hideLoader();
-    }, 5400);
+    setTimeout(showLoader, 180);
+    const loaderTimeout = setTimeout(() => {
+      animateLoveLoader();
+    }, 700);
 
     if (skipLoader) {
       skipLoader.addEventListener("click", () => {
-        window.clearTimeout(loaderTimeout);
+        clearTimeout(loaderTimeout);
         sessionStorage.setItem("kadhalumLoaderSeen", "true");
-        hideLoader();
+        setTimeout(hideLoader, 80);
       });
     }
   } else {
     sessionStorage.setItem("kadhalumLoaderSeen", "true");
+    if (loveFill) loveFill.style.width = "100%";
+    if (lovePercent) lovePercent.textContent = "100%";
     loader.classList.add("is-open");
-    setTimeout(hideLoader, 900);
+    setTimeout(hideLoader, 800);
     if (skipLoader) {
       skipLoader.addEventListener("click", hideLoader);
     }
@@ -217,6 +239,23 @@ if (musicToggle && weddingAudio) {
   const setPlayingState = (isPlaying) => {
     musicToggle.classList.toggle("is-playing", isPlaying);
     musicToggle.setAttribute("aria-pressed", String(isPlaying));
+    musicToggle.setAttribute("aria-label", isPlaying ? "Pause music" : "Play music");
+
+    const label = musicToggle.querySelector(".music-label");
+    if (label) {
+      label.textContent = isPlaying ? "MUSIC ON" : "MUSIC OFF";
+    }
+  };
+
+  const startPlayback = async () => {
+    try {
+      weddingAudio.volume = 0.7;
+      await weddingAudio.play();
+      setPlayingState(true);
+    } catch (error) {
+      console.warn("Audio playback was blocked:", error);
+      setPlayingState(false);
+    }
   };
 
   musicToggle.addEventListener("click", async () => {
@@ -232,6 +271,8 @@ if (musicToggle && weddingAudio) {
       console.warn("Audio playback was blocked:", error);
     }
   });
+
+  startPlayback();
 }
 
 const pageProgress = document.querySelector(".page-progress span");

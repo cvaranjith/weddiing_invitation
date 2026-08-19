@@ -29,43 +29,28 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="page-progress" aria-hidden="true"><span></span></div>
 
     <div class="page-shell">
-      <div class="loader invitation-loader" id="loader" aria-live="polite">
-        <div class="loader-backdrop"></div>
+      <div class="loader heart-loader" id="loader" aria-live="polite">
+        <div class="loader-glow"></div>
 
-        <div class="loader-invitation">
-          <div class="envelope-wrap">
-            <div class="envelope">
-              <div class="envelope-flap"></div>
-            </div>
-
-            <div class="invitation-card">
-              <div class="card-inner">
-                <p>Sivaranjith</p>
-                <span class="ampersand">&</span>
-                <p>Pavithra</p>
-                <div class="card-date">07 • 09 • 2026</div>
-              </div>
-            </div>
-
-            <div class="book-spread" aria-hidden="true">
-              <div class="page page-left">Our Story</div>
-              <div class="page page-right">Our Forever</div>
-            </div>
+        <div class="love-meter-wrap">
+          <div class="love-heart" aria-hidden="true">❤</div>
+          <div class="love-meter">
+            <div class="love-fill" id="loveFill"></div>
           </div>
+          <div class="love-percent" id="lovePercent">0%</div>
+        </div>
 
-          <div class="loader-content">
-            <p class="eyebrow">A little story is about to unfold…</p>
-            <h2>Kadhalum Coffeeyum</h2>
-            <h3>Sivaranjith & Pavithra</h3>
-            <p class="loader-subtitle">Our Forever Begins</p>
-          </div>
+        <div class="loader-content">
+          <p class="eyebrow">A little story is about to unfold…</p>
+          <h2>Kadhalum Coffeeyum</h2>
+          <h3>Sivaranjith & Pavithra</h3>
+          <p class="loader-subtitle">Our Forever Begins</p>
         </div>
 
         <button class="skip-loader" type="button" id="skipLoader">Skip</button>
@@ -173,6 +158,58 @@
           </div>
         </section>
 
+         <section class="vlog-section section-shell reveal">
+          <div class="container">
+            <div class="vlog-header">
+              <p class="section-label">Our Couple Vlog</p>
+              <h3>Follow our little world of food, coffee & love.</h3>
+            </div>
+
+            <div class="vlog-showcase">
+              <div class="vlog-profile-card">
+                <div class="vlog-avatar-wrap">
+                  <img src="assets/images/img-2.jpeg" alt="Couple vlog profile" />
+                </div>
+                <div class="vlog-profile-info">
+                  <p class="vlog-handle">@kadhalumcoffeeyum</p>
+                  <p class="vlog-meta">Food • Coffee • Love • Life</p>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a class="social-link instagram" href="https://www.instagram.com/kadhalum_coffeeyum/" target="_blank" rel="noopener noreferrer">
+                  <span class="social-icon">◎</span>
+                  <span>
+                    <strong>Instagram</strong>
+                    <small>Follow our story</small>
+                  </span>
+                </a>
+                <a class="social-link whatsapp" href="https://whatsapp.com/channel/0029VbDTKjz60eBXXV0Isi0W" target="_blank" rel="noopener noreferrer">
+                  <span class="social-icon">✆</span>
+                  <span>
+                    <strong>WhatsApp</strong>
+                    <small>Stay connected</small>
+                  </span>
+                </a>
+                <a class="social-link facebook" href="https://www.facebook.com/KadhalumCoffeeyum/" target="_blank" rel="noopener noreferrer">
+                  <span class="social-icon">f</span>
+                  <span>
+                    <strong>Facebook</strong>
+                    <small>Our moments</small>
+                  </span>
+                </a>
+                <a class="social-link youtube" href="https://www.youtube.com/@KadhalumCoffeeyum" target="_blank" rel="noopener noreferrer">
+                  <span class="social-icon">▶</span>
+                  <span>
+                    <strong>YouTube</strong>
+                    <small>Subscribe & watch</small>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="engagement section-shell" id="engagement">
           <div class="container engagement-layout reveal">
             <div class="engagement-copy">
@@ -214,26 +251,37 @@
 
         <section class="countdown section-shell reveal" id="wedding">
           <div class="container countdown-wrap">
-            <p class="section-label">The Countdown to Forever</p>
-            <h3>Days until our forever begins</h3>
-            <div class="countdown-grid" aria-label="Wedding countdown">
-              <div class="time-box">
-                <span id="days">00</span>
-                <small>Days</small>
+            <div class="countdown-header">
+              <p class="section-label">The Countdown to Forever</p>
+              <h3>Days until our forever begins</h3>
+            </div>
+
+            <div class="countdown-shell">
+              <div class="countdown-visual">
+                <img src="assets/images/img-3.jpeg" alt="Love story photo" />
+                <div class="countdown-badge">Together Forever</div>
               </div>
-              <div class="time-box">
-                <span id="hours">00</span>
-                <small>Hours</small>
-              </div>
-              <div class="time-box">
-                <span id="minutes">00</span>
-                <small>Minutes</small>
-              </div>
-              <div class="time-box">
-                <span id="seconds">00</span>
-                <small>Seconds</small>
+
+              <div class="countdown-grid" aria-label="Wedding countdown">
+                <div class="time-box time-days">
+                  <span id="days">00</span>
+                  <small>Days</small>
+                </div>
+                <div class="time-box time-hours">
+                  <span id="hours">00</span>
+                  <small>Hours</small>
+                </div>
+                <div class="time-box time-minutes">
+                  <span id="minutes">00</span>
+                  <small>Minutes</small>
+                </div>
+                <div class="time-box time-seconds">
+                  <span id="seconds">00</span>
+                  <small>Seconds</small>
+                </div>
               </div>
             </div>
+
             <p class="countdown-status" id="countdownStatus">September 7, 2026 — 6:30 PM</p>
           </div>
         </section>
@@ -262,7 +310,7 @@
                   <span class="detail-icon">📍</span>
                   <div>
                     <strong>Venue</strong>
-                    <p>SGS Hall, Suchindram, Nagercoil</p>
+                    <p>SGS Hall, WCC road, Nagercoil</p>
                   </div>
                 </li>
               </ul>
@@ -279,7 +327,7 @@
 
       <h3>SGS Delight Hall</h3>
 
-      <p>Suchindram, Nagercoil</p>
+      <p>wcc road, Nagercoil</p>
       <p>Tamil Nadu</p>
 
       <div class="map-actions">
@@ -342,6 +390,8 @@
             </div>
           </div>
         </section>
+
+       
 
         <section class="profiles section-shell reveal">
           <div class="container profiles-grid">
@@ -427,12 +477,12 @@
       <button class="lightbox-arrow next" type="button" aria-label="Next image">→</button>
     </div>
 
-    <button class="music-toggle" type="button" aria-label="Toggle music">
+    <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="true">
       <span>♪</span>
-      <span class="music-label">MUSIC</span>
+      <span class="music-label">MUSIC ON</span>
     </button>
 
-    <audio id="weddingAudio" preload="none" loop>
+    <audio id="weddingAudio" preload="auto" autoplay loop>
       <source src="assets/audio/wedding-music.mp3" type="audio/mpeg" />
     </audio>
 
