@@ -1,4 +1,4 @@
 
-### music section
-- music default play, 
-- if click stop playing , after that control the play from button.
+### responsive issue
+- in mobile view pre-loader and the countdown section redesign for mobile view
+- pre-loder left side love level increase and right side text, change into top loading

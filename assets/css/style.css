@@ -1466,7 +1466,9 @@ body.is-loaded .hero-content > *:nth-child(6) { animation-delay: 1.25s; }
   .engagement-layout,
   .location-layout,
   .blessings-layout,
-  .profiles-grid {
+  .profiles-grid,
+  .countdown-shell,
+  .vlog-showcase {
     grid-template-columns: 1fr;
   }
 
@@ -1535,8 +1537,14 @@ body.is-loaded .hero-content > *:nth-child(6) { animation-delay: 1.25s; }
     letter-spacing: 0.2rem;
   }
 
-  .countdown-grid {
-    grid-template-columns: repeat(2, minmax(110px, 1fr));
+  .countdown-shell,
+  .countdown-grid,
+  .vlog-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown-visual {
+    min-height: 220px;
   }
 
   .detail-list li {
@@ -1557,10 +1565,6 @@ body.is-loaded .hero-content > *:nth-child(6) { animation-delay: 1.25s; }
     padding: 0.65rem 0.8rem;
   }
 
-  .vlog-showcase {
-    grid-template-columns: 1fr;
-  }
-
   .love-meter-wrap {
     margin-bottom: 1rem;
   }
@@ -1569,8 +1573,13 @@ body.is-loaded .hero-content > *:nth-child(6) { animation-delay: 1.25s; }
     width: min(76vw, 280px);
   }
 
+  .loader {
+    padding: 1.5rem 1rem;
+  }
+
   .loader-content {
     gap: 0.2rem;
+    width: 100%;
   }
 
   .loader-content h2 {
@@ -1583,6 +1592,11 @@ body.is-loaded .hero-content > *:nth-child(6) { animation-delay: 1.25s; }
 
   .loader-subtitle {
     letter-spacing: 0.2rem;
+  }
+
+  .skip-loader {
+    right: 1rem;
+    bottom: 1rem;
   }
 }
 
