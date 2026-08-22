@@ -1075,6 +1075,36 @@ p {
   object-fit: cover;
 }
 
+/* Four-image grid for blessings section */
+.blessings-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.blessings-images .gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .blessings-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .blessings-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .blessings-images .gallery-item img {
+    height: 180px;
+  }
+}
+
 .final-invite {
   position: relative;
   min-height: 700px;
